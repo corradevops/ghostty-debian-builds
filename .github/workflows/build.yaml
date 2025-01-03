@@ -36,7 +36,7 @@ jobs:
           repository: 'ghostty'
           
       - name: "Build Ghostty binary"
-        run: zig init && zig build -Doptimize=ReleaseFast
+        run: cd ghostty && zig build -Doptimize=ReleaseFast
 
       - name: "List files"
         run: ls -liFh
@@ -46,4 +46,4 @@ jobs:
         with:
           name: ${{ github.run.id }}
           tag_name: ${{ github.ref_name }}
-          files: ghostty
+          files: zig-out/bin/ghostty
