@@ -1,0 +1,44 @@
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: "Build Ghostty :ghost:"
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: "Checkout latest codebase"
+        uses: actions/checkout@v3
+
+      # Refer : https://ghostty.org/docs/install/build
+      - name: "Install Depenencies"
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-4-dev libadwaita-1-dev
+
+      # Refer : https://github.com/marketplace/actions/setup-zig-compiler
+      - name: "Setup Zip"
+        uses: mlugg/setup-zig@v1
+        with:
+          version: 0.13.0
+
+      - name: "Clone Ghostty repo"
+        uses: GuillaumeFalourd/clone-github-repo-action@v2.3
+        with:
+          depth: 1
+          branch: 'main'
+          owner: 'ghostty-org'
+          repository: 'ghostty'
+          
+      - name: "Build Ghostty binary"
+        run: zig build -Doptimize=ReleaseFast
+
+      - name: "Create a release"
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ GITHUB_RUN_ID }}
+          files: zig-out/bin/ghostty
+
+      
