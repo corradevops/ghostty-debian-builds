@@ -33,7 +33,7 @@ jobs:
           repository: 'ghostty'
           
       - name: "Build Ghostty binary"
-        run: zig build -Doptimize=ReleaseFast
+        run: zig init && zig build -Doptimize=ReleaseFast
 
       - name: "Create a release"
         uses: softprops/action-gh-release@v2
