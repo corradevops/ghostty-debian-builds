@@ -46,4 +46,4 @@ jobs:
         with:
           name: ${{ github.run.id }}
           tag_name: ${{ github.ref_name }}
-          files: zig-out/bin/ghostty
+          files: ghostty/zig-out/bin/ghostty
