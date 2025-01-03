@@ -38,9 +38,12 @@ jobs:
       - name: "Build Ghostty binary"
         run: zig init && zig build -Doptimize=ReleaseFast
 
+      - name: "List files"
+        run: ls -liFh
+
       - name: "Create a release"
         uses: softprops/action-gh-release@v2
         with:
           name: ${{ github.run.id }}
           tag_name: ${{ github.ref_name }}
-          files: zig-out/bin/ghostty
+          files: ghostty
