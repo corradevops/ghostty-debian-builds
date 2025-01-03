@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: "Build Ghostty :ghost:"
+    name: "Build Ghostty"
     runs-on: ubuntu-22.04
 
     steps:
@@ -39,6 +39,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           name: ${{ github.run.id }}
+          tag_name: ${{ github.ref_name }}
           files: zig-out/bin/ghostty
-
-      
