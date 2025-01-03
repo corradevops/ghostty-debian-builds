@@ -36,7 +36,7 @@ jobs:
           repository: 'ghostty'
           
       - name: "Build Ghostty binary"
-        run: cd ghostty && zig build -Doptimize=ReleaseFast
+        run: cd ghostty && zig build -Doptimize=ReleaseFast && mv zig-out ghostty && tar -jcf ghostty.tar.bz2 ghostty
 
       - name: "List files"
         run: ls -liFh
@@ -46,4 +46,4 @@ jobs:
         with:
           name: ${{ github.run.id }}
           tag_name: ${{ github.ref_name }}
-          files: ghostty/zig-out/bin/ghostty
+          files: ghostty/ghostty.tar.bz2
