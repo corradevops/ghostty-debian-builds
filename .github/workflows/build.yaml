@@ -63,7 +63,7 @@ jobs:
       - name: "Install Depenencies"
         run: |
           apt-get update
-          apt-get install -y build-essential libgtk-4-dev libadwaita-1-dev
+          apt-get install -y build-essential git libgtk-4-dev libadwaita-1-dev
 
       # Refer : https://github.com/marketplace/actions/setup-zig-compiler
       - name: "Setup Zip"
