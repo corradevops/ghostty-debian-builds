@@ -53,6 +53,7 @@ jobs:
     name: "Build Ghostty for Debian 12 Bookworm"
     runs-on: ubuntu-24.04
     permissions: write-all
+    # Ref: https://stackoverflow.com/questions/64033686/how-can-i-use-private-docker-image-in-github-actions
     container: debian:12.8
     
     steps:
