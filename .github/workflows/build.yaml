@@ -36,7 +36,7 @@ jobs:
           repository: 'ghostty'
           
       - name: "Build Ghostty binary"
-        run: cd ghostty && zig build -Doptimize=ReleaseFast && mv zig-out ghostty && tar -jcf ghostty.tar.bz2 ghostty
+        run: cd ghostty && zig build -Doptimize=ReleaseFast && mv zig-out ghostty && tar -jcf ghostty-ubuntu-24.04-amd64.tar.bz2 ghostty
 
       - name: "List files"
         run: ls -liFh
@@ -53,6 +53,7 @@ jobs:
     name: "Build Ghostty for Debian 12 Bookworm"
     runs-on: ubuntu-24.04
     permissions: write-all
+    # Refer : https://stackoverflow.com/questions/64033686/how-can-i-use-private-docker-image-in-github-actions
     container: debian:12.8
     
     steps:
@@ -80,7 +81,7 @@ jobs:
           repository: 'ghostty'
 
       - name: "Build Ghostty binary"
-        run: cd ghostty && zig build -Doptimize=ReleaseFast && mv zig-out ghostty && tar -jcf ghostty.tar.bz2 ghostty
+        run: cd ghostty && zig build -Doptimize=ReleaseFast && mv zig-out ghostty && tar -jcf ghostty-debian-12-amd64.tar.bz2 ghostty
 
       - name: "List files"
         run: ls -liFh
