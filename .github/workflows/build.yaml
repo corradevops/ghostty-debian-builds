@@ -48,7 +48,7 @@ jobs:
       - name: "Create a release"
         uses: softprops/action-gh-release@v2
         with:
-          name: Ubuntu Ghostty ${{ vars.GHOSTTY_VERSION }} Build on ${{ steps.date.outputs.date }}
+          name: ${{ github.run.id }}
           tag_name: ${{ github.ref_name }}
           files: ghostty/ghostty-ubuntu-24.04-amd64.tar.bz2
 
@@ -97,6 +97,6 @@ jobs:
       - name: "Create a release"
         uses: softprops/action-gh-release@v2
         with:
-          name: Debian Ghostty ${{ vars.GHOSTTY_VERSION }} Build on ${{ steps.date.outputs.date }}
+          name: ${{ github.run.id }}
           tag_name: ${{ github.ref_name }}
           files: ghostty/ghostty-debian-12-amd64.tar.bz2
