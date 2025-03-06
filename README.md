@@ -15,7 +15,7 @@ We thank Mitchell Hashimoto for providing the sourcecode for Ghostty under [MIT 
 
 The source : `https://github.com/ghostty-org/ghostty` 
 
-We are currently building against the tag `v1.1.0` 
+We are currently building against the tag `v1.1.1` 
 
 ## Download
 
