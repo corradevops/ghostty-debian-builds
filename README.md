@@ -15,7 +15,7 @@ We thank Mitchell Hashimoto for providing the sourcecode for Ghostty under [MIT 
 
 The source : `https://github.com/ghostty-org/ghostty` 
 
-We are currently building against the tag `v1.1.2` 
+We are currently building against the tag `v1.1.3` 
 
 ## Download
 
@@ -23,11 +23,11 @@ We are currently building against the tag `v1.1.2`
 
 #### Ubuntu
 
-https://github.com/corradevops/ghostty-debian-builds/releases/download/v1.1.2/ghostty-ubuntu-24.04-amd64.tar.bz2
+https://github.com/corradevops/ghostty-debian-builds/releases/download/v1.1.3/ghostty-ubuntu-24.04-amd64.tar.bz2
 
 #### Debian
 
-https://github.com/corradevops/ghostty-debian-builds/releases/download/v1.1.2/ghostty-debian-12-amd64.tar.bz2
+https://github.com/corradevops/ghostty-debian-builds/releases/download/v1.1.3/ghostty-debian-12-amd64.tar.bz2
 
 ## Warning
 
